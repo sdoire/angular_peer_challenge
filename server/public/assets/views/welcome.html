@@ -1,0 +1,10 @@
+<div class="container" ng-controller="WelcomeController">
+    <div>
+        <h1>{{heading + message}}</h1>
+        <input ng-model="note.message" type="text" placeholder="Enter your name">
+    </div>
+    <button ng-click="updateMessage(note)">Update</button>
+    <ul>
+        <li class="col-md-3 col-sm-12" ng-repeat="note in notes | orderBy:'message'">{{ note.message }}</li>
+    </ul>
+</div>

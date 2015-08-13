@@ -17,9 +17,6 @@ myApp.controller("WelcomeController", ['$scope', '$http', function($scope, $http
             return response.data;
         })
     };
-    $scope.add = function(note) {
-        return $http.post('/add', note).then(fetchNotes);
-    };
     fetchNotes();
 
     $scope.updateMessage = function(note){

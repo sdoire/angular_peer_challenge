@@ -5,6 +5,21 @@
     </div>
     <button ng-click="updateMessage(note)">Update</button>
     <ul>
-        <li class="col-md-3 col-sm-12" ng-repeat="note in notes | orderBy:'message'">{{ note.message }}</li>
+        <li class="col-md-3 col-sm-12" ng-class="{strike: deleted, bold: important, 'has-error': error}" ng-repeat="note in notes | orderBy:'message'">{{ note.message }}</li>
     </ul>
+    <br />
+    <form>
+    <label>
+        <input type="checkbox" ng-model="deleted">
+        deleted (apply "strike" class)
+    </label><br>
+    <label>
+        <input type="checkbox" ng-model="important">
+        important (apply "bold" class)
+    </label><br>
+    <label>
+        <input type="checkbox" ng-model="error">
+        error (apply "has-error" class)
+    </label>
+    </form>
 </div>

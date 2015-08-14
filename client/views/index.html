@@ -15,6 +15,24 @@
 
     <ng-include src="'/assets/views/welcome.html'"></ng-include>
 
+    <div class="container">
+        <div ng-controller="DirectiveController">
+        <p>Type in a list of names.</p>
+        <textarea ng-model="people" ng-list="&#10;" ng-trim="false"></textarea>
+
+        <p>JSON Version:</p>
+        <pre>{{ people | json }}</pre>
+
+        <ng-pluralize count="people.length" offset="3" when="{
+            '0': 'Your array is lonely.',
+            '1': '{{person1}} is now lonely.',
+            '2': '{{person1}} and {{person2}} are hanging out.',
+            '3': '{{person1}} and {{person2}} are hanging out and {{person3}} is the third wheel.',
+            'one': '{{person1}}, {{person2}}, {{person3}} and one other person are a crowd.',
+            'other': '{{person1}}, {{person2}}, {{person3}} and {} other people are even more of a crowd.'}">
+        </ng-pluralize>
+        </div>
+    </div>
 
     <!--SCRIPTS-->
     <script type="text/javascript" src="/vendors/angular/angular.min.js"></script>

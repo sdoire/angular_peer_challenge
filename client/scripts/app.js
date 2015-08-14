@@ -25,3 +25,15 @@ myApp.controller("WelcomeController", ['$scope', '$http', function($scope, $http
         $http.post('/add', note).then(fetchNotes());
     };
 }]);
+
+myApp.controller('DirectiveController', ['$scope',
+    function ($scope) {
+        $scope.people = [];
+
+        $scope.$watch('people', function () {
+            $scope.person1 = ($scope.people[0] ? $scope.people[0] : null);
+            $scope.person2 = ($scope.people[1] ? $scope.people[1] : null);
+            $scope.person3 = ($scope.people[2] ? $scope.people[2] : null);
+        })
+    }
+]);

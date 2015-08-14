@@ -1,1 +1,26 @@
-/*! angular_lecture_build 2015-08-13 */
+.strike {
+    text-decoration: line-through;
+}
+.bold {
+    font-weight: bold;
+}
+.red {
+    color: red;
+}
+.has-error {
+    color: red;
+    background-color: yellow;
+}
+.orange {
+    color: orange;
+}
+.clearfix {
+    clear: all;
+    clear: both;
+}
+form {
+    display: block;
+}
+ul {
+    display: block;
+}
